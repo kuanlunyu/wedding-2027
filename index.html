@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="我們的婚禮邀請函" />
+    <title>我們的婚禮邀請</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Serif+TC:wght@400;500;600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+    <style>
+      :root { --ink:#7d6a63; --olive:#b59b94; --sage:#f2c6c2; --paper:#f6e7d8; --sand:#f2c6c2; --gold:#e8a9a1; --rose:#e8a9a1; }
+      * { box-sizing: border-box; }
+      html { scroll-behavior:smooth; }
+      body { margin:0; color:var(--ink); background:var(--paper); font-family:"Noto Serif TC", serif; font-size:16px; line-height:1.7; }
+      a { color:inherit; text-decoration:none; }
+      .nav { position:fixed; z-index:20; top:0; width:100%; padding:20px 5.5%; display:flex; justify-content:space-between; align-items:center; color:#fff; transition:.35s; }
+      .nav.scrolled { background:rgba(246,231,216,.95); box-shadow:0 2px 16px #7d6a6312; color:var(--ink); padding:13px 5.5%; backdrop-filter:blur(8px); }
+      .brand { font: 22px/1 "DM Serif Display", serif; letter-spacing:.05em; }
+      .links { display:flex; gap:25px; font:500 12px "Outfit", sans-serif; letter-spacing:.12em; text-transform:uppercase; }
+      .hero { min-height:780px; height:100svh; position:relative; color:white; display:grid; place-items:center; overflow:hidden; text-align:center; }
+      .hero::before { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(67,47,43,.38),rgba(67,47,43,.08)), url('one07225.jpg') center 62%/cover; transform:scale(1.02); }
+      .hero-content { z-index:1; margin-top:45px; padding:28px; }
+      .eyebrow { font:500 12px "Outfit", sans-serif; letter-spacing:.25em; text-transform:uppercase; }
+      h1 { font:clamp(64px, 10vw, 142px)/.86 "DM Serif Display", serif; font-weight:400; margin:24px 0 28px; letter-spacing:-.05em; }
+      h1 span { display:block; font:italic .47em/1 "DM Serif Display", serif; margin:14px 0; letter-spacing:0; }
+      .date { display:flex; justify-content:center; align-items:center; gap:20px; font:500 13px "Outfit", sans-serif; letter-spacing:.18em; }
+      .date i { height:1px; width:38px; background:#fff; }
+      .scroll { position:absolute; bottom:26px; font:10px "Outfit", sans-serif; letter-spacing:.18em; text-transform:uppercase; z-index:1; display:flex; align-items:center; gap:8px; }
+      .scroll::after { content:"↓"; font-size:19px; }
+      section { padding:120px 7%; }
+      .intro { display:grid; grid-template-columns:1fr 1.1fr; gap:8%; align-items:center; max-width:1300px; margin:auto; }
+      .intro-photo { min-height:560px; background:url('one07045.jpg') center 66%/cover; position:relative; }
+      .intro-photo::after { content:'02 · 20 · 2027'; position:absolute; bottom:-32px; right:-28px; color:var(--gold); background:var(--paper); padding:13px 20px; font:18px "Outfit", sans-serif; letter-spacing:.08em; }
+      .kicker { color:var(--gold); font:600 12px "Outfit", sans-serif; letter-spacing:.19em; text-transform:uppercase; }
+      h2 { font:clamp(36px, 4.5vw, 61px)/1.1 "DM Serif Display", "Noto Serif TC", serif; font-weight:400; margin:17px 0 27px; letter-spacing:-.03em; }
+      .intro p { max-width:490px; color:var(--ink); }
+      .signature { margin-top:32px; font:italic 32px "DM Serif Display", serif; }
+      .story { background:var(--sage); text-align:center; position:relative; overflow:hidden; }
+      .story::before,.story::after { content:'✦'; color:#e8a9a1; position:absolute; font-size:220px; line-height:1; }
+      .story::before { left:-46px; top:-27px; } .story::after { right:-46px; bottom:-70px; }
+      .story > * { position:relative; }
+      .story p { max-width:620px; margin:0 auto; font-size:18px; }
+      .schedule { max-width:1000px; margin:25px auto 0; border-top:1px solid #d6b9b2; }
+      .schedule-row { display:grid; grid-template-columns:140px 1fr 1fr; gap:18px; padding:26px 12px; border-bottom:1px solid #d6b9b2; text-align:left; align-items:center; }
+      .time { color:var(--ink); font:600 15px "Outfit", sans-serif; letter-spacing:.08em; }.event { font-size:19px; }.detail { color:var(--ink); font-size:14px; }
+      .gallery { padding-bottom:45px; max-width:1450px; margin:auto; }.gallery-title { text-align:center; margin-bottom:50px; }
+      .gallery-grid { min-height:640px; background:url('one07337.jpg') center 63%/cover; }
+      .venue { display:grid; grid-template-columns:1fr 1fr; background:#7d6a63; color:#f6e7d8; padding:0; }.venue-map{min-height:620px;width:100%;border:0;filter:saturate(.72) sepia(.12);}.venue-copy{padding:110px 14%;}.venue-copy .kicker{color:#f2c6c2}.venue-copy p{color:#f6e7d8}.address{margin:35px 0; padding:22px 0; border-top:1px solid #ffffff48;border-bottom:1px solid #ffffff48;}.address strong{display:block;font-size:18px;margin-bottom:5px;}.button{display:inline-flex; align-items:center; gap:13px; padding:13px 20px; border:1px solid currentColor; font:500 12px "Outfit",sans-serif; letter-spacing:.1em; transition:.2s;}.button:hover{background:var(--paper);color:var(--ink)}
+      .rsvp { max-width:900px; margin:auto; text-align:center; }.rsvp p{color:var(--ink);}.form-embed{margin-top:40px;min-height:710px;width:100%;border:0;background:#fff8f2;border-radius:3px;}.form-note{font-size:12px;color:var(--ink);margin-top:23px;text-align:center;}
+      footer{padding:55px 7%; text-align:center; background:var(--sand);}.footer-name{font:32px "DM Serif Display",serif;}.footer-note{font-size:12px;letter-spacing:.08em;color:var(--ink);margin-top:8px;}
+      @media (max-width:720px){.nav{padding:17px 6%;}.links{gap:14px;font-size:10px}.links a:nth-child(2),.links a:nth-child(3){display:none}.hero{min-height:680px}.intro,.venue{grid-template-columns:1fr}.intro{gap:65px}.intro-photo{min-height:430px}.intro-photo::after{right:0}.story,section{padding:82px 7%}.schedule-row{grid-template-columns:86px 1fr}.detail{grid-column:2}.gallery-grid{min-height:440px}.venue-map{min-height:400px}.venue-copy{padding:76px 9%}.form-embed{min-height:720px}}
+    </style>
+  </head>
+  <body>
+    <nav class="nav" id="nav"><a class="brand" href="#home">S & Z</a><div class="links"><a href="#story">婚禮資訊</a><a href="#gallery">我們的片刻</a><a href="#venue">交通方式</a><a href="#rsvp">出席回覆</a></div></nav>
+    <main>
+      <section class="hero" id="home"><div class="hero-content"><div class="eyebrow">We are getting married</div><h1>我們 <span>結婚了</span></h1><div class="date"><i></i><span>2027 . 02 . 20 · Saturday</span><i></i></div></div><a class="scroll" href="#story">向下探索</a></section>
+      <section><div class="intro"><div class="intro-photo" aria-label="新人婚紗照"></div><div><div class="kicker">A note from us</div><h2>邀你，一起見證<br>我們的這一天</h2><p>在平凡而珍貴的日子裡，我們決定攜手走進人生的新篇章。真心期待與最親愛的你們相聚，分享這份喜悅與溫柔。</p><div class="signature">With love</div></div></div></section>
+      <section class="story" id="story"><div class="kicker">The celebration</div><h2>婚禮時光</h2><p>請留一個午後給我們，讓笑聲、祝福與愛，成為這一天最美的風景。</p><div class="schedule"><div class="schedule-row"><div class="time">12:00</div><div class="event">婚禮午宴・準時開席</div><div class="detail">敬請準時入座，共享喜悅</div></div></div></section>
+      <section class="gallery" id="gallery"><div class="gallery-title"><div class="kicker">Our moments</div><h2>把愛，收藏成光</h2></div><div class="gallery-grid" aria-label="新人婚紗照"></div></section>
+      <section class="venue" id="venue"><iframe class="venue-map" title="淡水嘉廬地圖" src="https://www.google.com/maps?q=%E6%B7%A1%E6%B0%B4%E5%98%89%E5%BB%AC&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><div class="venue-copy"><div class="kicker">Venue & transport</div><h2>與你相見<br>在淡水河畔</h2><p>為了讓你輕鬆抵達，我們整理了場地資訊與交通建議。</p><div class="address"><strong>淡水嘉廬</strong><span>新北市淡水區中正路 382 號<br>座落於紅毛城旁</span></div><p><b>捷運：</b>捷運淡水站，接駁車資訊會於稍晚提供<br><br><b>開車：</b>場地免費停車位有限，建議提早抵達；若停車已滿，可至附近禮萊廣場付費停車（步行 5 分鐘）。</p><a class="button" href="https://www.google.com/maps/search/?api=1&query=%E6%B7%A1%E6%B0%B4%E5%98%89%E5%BB%AC" target="_blank" rel="noopener">開啟地圖導航 <span>↗</span></a></div></section>
+      <section id="rsvp"><div class="rsvp"><div class="kicker">RSVP</div><h2>期待你的回覆</h2><p>請告訴我們是否能出席，讓我們為你保留最剛好的位置。</p><iframe class="form-embed" title="婚禮出席回覆表單" src="https://docs.google.com/forms/d/e/1FAIpQLSd52KPoXCFWgVvSmdE2136VgFBwt_l_039YDysOMbzxMcKj8w/viewform?usp=header">載入表單中…</iframe><div class="form-note">若表單未能顯示，請<a href="https://docs.google.com/forms/d/e/1FAIpQLSd52KPoXCFWgVvSmdE2136VgFBwt_l_039YDysOMbzxMcKj8w/viewform?usp=header" target="_blank" rel="noopener"><u>點此開啟出席回覆表單</u></a>。</div></div></section>
+    </main>
+    <footer><div class="footer-name">With love</div><div class="footer-note">2027.02.20 · 淡水嘉廬</div></footer>
+    <script>
+      const nav=document.querySelector('#nav'); window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));
+    </script>
+  </body>
+</html>
